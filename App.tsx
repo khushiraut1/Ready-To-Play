@@ -118,26 +118,28 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {activeTab === 'players' && (
-        <div className="p-6 space-y-6">
-          <h2 className="text-2xl font-black">Community</h2>
-          {MOCK_USERS.filter(u => u.id !== currentUser.id).map(u => (
-            <div
-              key={u.id}
-              className="bg-[#1e293b] p-6 rounded-2xl flex justify-between items-center"
-            >
-              <span className="font-black">{u.name}</span>
-              <button
-                disabled={invitedIds.includes(u.id)}
-                onClick={() => setInvitedIds([...invitedIds, u.id])}
-                className="bg-[#84cc16] text-black px-4 py-2 rounded-xl font-black"
-              >
-                {invitedIds.includes(u.id) ? 'Invited' : 'Invite'}
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
+     {activeTab === 'players' && (
+  <div className="p-6 space-y-6">
+    <h2 className="text-2xl font-black">Community</h2>
+
+    {MOCK_USERS.filter(u => u.id !== currentUser.id).map(u => (
+      <div
+        key={u.id}
+        className="bg-[#1e293b] p-6 rounded-2xl flex justify-between items-center"
+      >
+        <span className="font-black">{u.name}</span>
+        <button
+          disabled={invitedIds.includes(u.id)}
+          onClick={() => setInvitedIds([...invitedIds, u.id])}
+          className="bg-[#84cc16] text-black px-4 py-2 rounded-xl font-black"
+        >
+          {invitedIds.includes(u.id) ? 'Invited' : 'Invite'}
+        </button>
+      </div>
+    ))}
+  </div>
+))}
+
 
       {activeTab === 'profile' && (
         <div className="p-6 space-y-6">
