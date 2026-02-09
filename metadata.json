@@ -1,0 +1,7 @@
+{
+  "name": "Ready to Play - Sports Matchmaking App",
+  "description": "A comprehensive mobile application for finding nearby players, forming sports groups, and organizing events using location-based matching and AI assistance.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
